@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div class="message">
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="/pizzas/save" method="post">
+        <div>
+            <label for="nome">Usuario: </label>
+            <select name="usuario_id" id="nome">
+                <option value=""></option>
+                {% for u in usuario %}
+                <option value="{{u.id}}">{{u.nome}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="sabor">Sabor: </label>
+            <select name="pizza.id" id="sabor">
+                <option value=""></option>
+                {{% for p in pizza %}}
+                <option value="{{u.id}}">{{u.sabor}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="preco">Preço: </label>
+            <input type="number" name="preco" id="preco">
+        </div>
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}

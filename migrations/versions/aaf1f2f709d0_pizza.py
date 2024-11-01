@@ -1,8 +1,8 @@
-"""Migração Inicial
+"""PIZZA
 
-Revision ID: 5833431496d6
+Revision ID: aaf1f2f709d0
 Revises: 
-Create Date: 2024-10-25 10:01:13.355697
+Create Date: 2024-11-01 09:11:01.296867
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '5833431496d6'
+revision = 'aaf1f2f709d0'
 down_revision = None
 branch_labels = None
 depends_on = None

@@ -12,7 +12,7 @@ def index():
 
 @bp_usuario.route('/add')
 def add():
-    return render_template('Usuario_add.html')
+    return render_template('usuario_add.html')
 
 @bp_usuario.route('/save', methods=['POST'])
 def save():
@@ -24,7 +24,7 @@ def save():
         db.session.add(objeto)
         db.session.commit()
         flash('Usuario salvo com sucesso')
-        return redirect('/')
+        return redirect('/usuarios')
     else:
         flash('Preencha todos os campos')
-        return redirect('/add')
+        return redirect('/usuarios/add')
